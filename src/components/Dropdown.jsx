@@ -1,4 +1,5 @@
 import React, { useState } from "react"
+
 export function Dropdown({ details }) {
 
     const [mode, setMode] = useState(false)
@@ -39,6 +40,7 @@ export function Dropdown({ details }) {
                             href="#"
                             className="flex items-center px-4 py-2 text-md text-gray-700 hover:bg-gray-100 hover:text-gray-900"
                             role="menuitem"
+                            key={item.text}
                         >
                             <span className="flex flex-col">
                                 <span>{item.text}</span>

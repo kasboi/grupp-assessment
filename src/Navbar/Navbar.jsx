@@ -1,5 +1,7 @@
 import { Logo } from "./../components/Logo"
-import { Search } from "./../components/Search"
+import { Input } from "./../components/Input"
+import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
+
 
 import {
     ChartIcon,
@@ -48,7 +50,7 @@ const Navbar = () => {
     return (
         <div className="px-6 py-2 max-w-sm">
             <Logo Logo={logoImg} />
-            <Search />
+            <Input Icon={MagnifyingGlassIcon} type="text" placeholder="Search"/>
             <div className="mt-4 mb-7">
                 {navList.map((item) => (
                     <button key={item.name} className="flex items-center mb-1.5 py-2 pl-0.5 w-full rounded-md hover:bg-slate-100">
