@@ -11,7 +11,7 @@ import {
     SupportIcon,
     TaskIcon,
     UserIcon,
-} from "./Icon"
+} from "../components/Icon"
 
 import logoImg from "../assets/Logomark.svg"
 import imgWrap from "../assets/ImageWrap.svg"
