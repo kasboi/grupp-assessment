@@ -5,14 +5,14 @@ export function Dropdown({ details }) {
     const [mode, setMode] = useState(false)
 
     return (
-        <div className="relative inline-block text-left sm:hidden">
+        <div className="relative z-10 inline-block text-left sm:hidden">
             <div
                 onClick={() => setMode(!mode)}
                 onBlur={() => setMode(false)}
             >
                 <button
                     type="button"
-                    className=" border border-gray-300 bg-white shadow-sm flex items-center justify-center w-full rounded-md px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-300"
+                    className="border border-gray-300 bg-white shadow-sm flex items-center justify-center w-full rounded-md px-4 py-2 text-sm font-medium text-gray-700  hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-gray-300"
                     id="options-menu"
                     on
                 >
@@ -30,7 +30,7 @@ export function Dropdown({ details }) {
             </div>
             <div className={`${mode ? 'block' : 'hidden'} absolute left-1 w-56 mt-2 origin-top-right bg-white rounded-md shadow-lg  ring-1 ring-black ring-opacity-5`}>
                 <div
-                    className="py-1 "
+                    className="py-1"
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby="options-menu"

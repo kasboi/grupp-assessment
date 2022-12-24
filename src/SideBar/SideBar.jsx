@@ -49,14 +49,14 @@ const navList = [
 const SideBar = ({ visible, setVisible }) => {
     return (
         <div
-            className={`px-6 py-2 z-10 h-full bg-blue-200 ${
+            className={`px-6 py-2 z-20 h-full bg-slate-50 ${
                 visible ? "absolute" : "hidden"
             } top-0 left-0 lg:block lg:relative lg:basis-1/3`}
         >
             <div className="flex justify-between items-center">
                 <Logo Logo={logoImg} />
                 <XMarkIcon
-                    className="text-slate-700 h-6 w-6 sm:hidden"
+                    className="text-slate-700 h-7 w-7 sm:hidden"
                     onClick={() => setVisible(!visible)}
                 />
             </div>
