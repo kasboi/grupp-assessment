@@ -1,3 +1,4 @@
+import { DropdownList } from "./../components/DropdownList"
 import { PayMethodCard } from "./../components/PayMethodCard"
 import { PayMethodMail } from "./../components/PayMethodMail"
 import { Input } from "../components/Input"
@@ -9,6 +10,8 @@ import mastercard from "../assets/mastercard.svg"
 import visa from "../assets/visa.svg"
 import radioBox from "../assets/radio-box.svg"
 import radioUnchecked from "../assets/radio-unchecked.svg"
+import { DownloadIcon } from "../components/Icon"
+import Table from "../components/Table"
 
 const details = [
     { text: "Details" },
@@ -24,7 +27,7 @@ const details = [
 
 const Settings = () => {
     return (
-        <div className="px-4">
+        <div className="px-4 flex-1 overflow-hidden bg-neutral-50">
             <div className="mt-12">
                 <h2 className="text-2xl mb-1">Settings</h2>
                 <p className="text-lg text-gray-500 mb-4">
@@ -32,23 +35,7 @@ const Settings = () => {
                 </p>
             </div>
             <Dropdown details={details} />
-            <div className="hidden sm:flex items-center overflow-auto btn-mode">
-                {details.map((item) => (
-                    <button
-                        key={item.text}
-                        type="button"
-                        className="w-full px-4 py-1 text-base font-medium text-black bg-white border hover:bg-gray-100"
-                    >
-                        {item.text}
-                    </button>
-                ))}
-            </div>
-            <div className="mt-6">
-                <h2 className="text-xl mb-1">Payment method</h2>
-                <p className="text-md text-gray-500 mb-4">
-                    Update your billing details and address.
-                </p>
-            </div>
+            <DropdownList details={details} />
             <PayMethodMail EnvelopeIcon={EnvelopeIcon} />
             <PayMethodCard
                 visa={visa}
@@ -56,6 +43,16 @@ const Settings = () => {
                 mastercard={mastercard}
                 radioUnchecked={radioUnchecked}
             />
+            <div>
+                <div className="mb-6 md:flex items-center justify-between">
+                    <h3 className="text-xl mb-3">Billing History</h3>
+                    <button className="flex items-center border-2 px-5 py-2 rounded-lg shadow-sm">
+                        <DownloadIcon />
+                        <span className="ml-3">Download all</span>
+                    </button>
+                </div>
+                <Table />
+            </div>
         </div>
     )
 }

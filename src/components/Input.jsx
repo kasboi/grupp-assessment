@@ -3,7 +3,7 @@ import React from "react"
 
 export function Input({Icon, type, placeholder}) {
     return (
-        <div className="relative my-1 max-w-sm mx-auto">
+        <div className="relative my-1 max-w-lg mx-auto">
             <input
                 type={type}
                 name="search"

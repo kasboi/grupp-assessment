@@ -1,11 +1,11 @@
-import Navbar from './Navbar'
+import SideBar from './SideBar'
 import Settings from './Settings'
 
 function App() {
   return (
-    <div className="App">
+    <div className="App flex w-full">
+      <SideBar />
       <Settings />
-      {/* <Navbar /> */}
     </div>
   )
 }

@@ -1,5 +1,5 @@
-import { Logo } from "./../components/Logo"
-import { Input } from "./../components/Input"
+import { Logo } from "../components/Logo"
+import { Input } from "../components/Input"
 import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
 
 
@@ -46,9 +46,9 @@ const navList = [
     },
 ]
 
-const Navbar = () => {
+const SideBar = () => {
     return (
-        <div className="px-6 py-2 max-w-sm">
+        <div className="px-6 py-2 hidden lg:block lg:basis-1/3">
             <Logo Logo={logoImg} />
             <Input Icon={MagnifyingGlassIcon} type="text" placeholder="Search"/>
             <div className="mt-4 mb-7">
@@ -94,7 +94,7 @@ const Navbar = () => {
                     </div>
                 </div>
             </div>
-            <div className="flex items-center py-4 justify-between border-t-2">
+            <div className="flex items-center justify-evenly py-4 border-t-2">
                 <img src={avatar} alt="avatar" />
                 <div>
                     <h3>Olivia Rhye</h3>
@@ -108,4 +108,4 @@ const Navbar = () => {
     )
 }
 
-export default Navbar
+export default SideBar
