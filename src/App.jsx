@@ -7,7 +7,7 @@ function App() {
     const [visible, setVisible] = useState(false)
 
     return (
-        <div className="App relative">
+        <div className="App relative overflow-hidden">
             <NavBar visible={visible} setVisible={setVisible}/>
             <div className="flex w-full">
                 <SideBar visible={visible} setVisible={setVisible}/>
