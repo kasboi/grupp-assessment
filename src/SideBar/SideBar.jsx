@@ -55,10 +55,12 @@ const SideBar = ({ visible, setVisible }) => {
         >
             <div className="flex justify-between items-center">
                 <Logo Logo={logoImg} />
-                <XMarkIcon
-                    className="text-slate-700 h-7 w-7 sm:hidden"
-                    onClick={() => setVisible(!visible)}
-                />
+                <button className="border-2 bg-slate-100 rounded-md">
+                    <XMarkIcon
+                        className="text-slate-700 h-7 w-7 sm:hidden"
+                        onClick={() => setVisible(!visible)}
+                    />
+                </button>
             </div>
             <Input
                 Icon={MagnifyingGlassIcon}
