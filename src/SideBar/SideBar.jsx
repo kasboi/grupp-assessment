@@ -1,7 +1,6 @@
 import { Logo } from "../components/Logo"
 import { Input } from "../components/Input"
-import { MagnifyingGlassIcon } from "@heroicons/react/20/solid"
-
+import { MagnifyingGlassIcon, XMarkIcon } from "@heroicons/react/20/solid"
 
 import {
     ChartIcon,
@@ -18,6 +17,7 @@ import {
 import logoImg from "../assets/Logomark.svg"
 import imgWrap from "../assets/ImageWrap.svg"
 import avatar from "../assets/Avatar.svg"
+import NavBar from "../NavBar/NavBar"
 
 const navList = [
     {
@@ -46,14 +46,31 @@ const navList = [
     },
 ]
 
-const SideBar = () => {
+const SideBar = ({ visible, setVisible }) => {
     return (
-        <div className="px-6 py-2 hidden lg:block lg:basis-1/3">
-            <Logo Logo={logoImg} />
-            <Input Icon={MagnifyingGlassIcon} type="text" placeholder="Search"/>
+        <div
+            className={`px-6 py-2 z-10 h-full bg-blue-200 ${
+                visible ? "absolute" : "hidden"
+            } top-0 left-0 lg:block lg:relative lg:basis-1/3`}
+        >
+            <div className="flex justify-between items-center">
+                <Logo Logo={logoImg} />
+                <XMarkIcon
+                    className="text-slate-700 h-6 w-6 sm:hidden"
+                    onClick={() => setVisible(!visible)}
+                />
+            </div>
+            <Input
+                Icon={MagnifyingGlassIcon}
+                type="text"
+                placeholder="Search"
+            />
             <div className="mt-4 mb-7">
                 {navList.map((item) => (
-                    <button key={item.name} className="flex items-center mb-1.5 py-2 pl-0.5 w-full rounded-md hover:bg-slate-100">
+                    <button
+                        key={item.name}
+                        className="flex items-center mb-1.5 py-2 pl-0.5 w-full rounded-md hover:bg-slate-100"
+                    >
                         <div className="mr-3 text-gray-900">{item.icon}</div>
                         <span className="text-md text-gray-700">
                             {item.name}
@@ -61,7 +78,7 @@ const SideBar = () => {
                     </button>
                 ))}
             </div>
-            <div className="mb-4 text-gray-700">
+            <div className="mb-12 text-gray-700">
                 <div className="mb-4">
                     <button className="flex w-full items-center mb-2 py-2 pl-0.5 hover:bg-slate-100">
                         <div className="mr-3">

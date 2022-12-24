@@ -1,13 +1,20 @@
-import SideBar from './SideBar'
-import Settings from './Settings'
+import SideBar from "./SideBar"
+import Settings from "./Settings"
+import NavBar from "./NavBar/NavBar"
+import { useState } from "react"
 
 function App() {
-  return (
-    <div className="App flex w-full">
-      <SideBar />
-      <Settings />
-    </div>
-  )
+    const [visible, setVisible] = useState(false)
+
+    return (
+        <div className="App relative">
+            <NavBar visible={visible} setVisible={setVisible}/>
+            <div className="flex w-full">
+                <SideBar visible={visible} setVisible={setVisible}/>
+                <Settings />
+            </div>
+        </div>
+    )
 }
 
 export default App

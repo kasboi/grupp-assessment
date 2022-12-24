@@ -17,7 +17,7 @@ export function PayMethodMail({ EnvelopeIcon }) {
                         Where should invoices be sent?
                     </p>
                 </div>
-                <div>
+                <div className="flex-1">
                     <label className="flex items-center mb-6 space-x-3">
                         <input
                             type="radio"
