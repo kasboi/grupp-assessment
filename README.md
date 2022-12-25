@@ -1,6 +1,7 @@
 ## React: Responsive Settings page with Tailwindcss
 
-![Made with Love](https://img.shields.io/badge/made_with-♥-ff69b4.svg)
+![Made with Varcel](https://img.shields.io/github/deployments/kasboi/vencru/production?label=vercel&logo=vercel&logoColor=white)
+
 
 This project was bootstrapped with [Vite](https://vitejs.dev/).
 
