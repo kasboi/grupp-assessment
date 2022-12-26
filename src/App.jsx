@@ -11,7 +11,7 @@ function App() {
             <NavBar visible={visible} setVisible={setVisible}/>
             <div className="flex w-full">
                 <SideBar visible={visible} setVisible={setVisible}/>
-                <Settings />
+                <Settings setVisible={setVisible}/>
             </div>
         </div>
     )

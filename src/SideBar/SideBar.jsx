@@ -46,7 +46,6 @@ const navList = [
         icon: <UserIcon />,
     },
 ]
-
 const SideBar = ({ visible, setVisible }) => {
     return (
         <div

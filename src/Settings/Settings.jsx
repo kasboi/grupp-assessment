@@ -25,9 +25,9 @@ const details = [
     { text: "API" },
 ]
 
-const Settings = () => {
+const Settings = ({ setVisible }) => {
     return (
-        <div className="px-4 flex-1 overflow-hidden bg-neutral-100">
+        <div className="px-4 flex-1 overflow-hidden bg-neutral-100" onClick={() => setVisible(false)}>
             <div className="mt-6">
                 <h2 className="text-2xl mb-1">Settings</h2>
                 <p className="text-lg text-gray-500 mb-4">
