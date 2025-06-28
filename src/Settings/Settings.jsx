@@ -49,7 +49,7 @@ const Settings = ({ setVisible }) => {
       />
       <div>
         <div className="mb-6 md:flex items-center justify-between">
-          <h3 className="text-xl mb-3">Billing History</h3>
+          <h3 className="text-xl mb-3 font-semibold">User Roles</h3>
           <button className="bg-white flex items-center border-2 px-5 py-2 rounded-lg shadow-sm">
             <DownloadIcon />
             <span className="ml-3">Download all</span>
