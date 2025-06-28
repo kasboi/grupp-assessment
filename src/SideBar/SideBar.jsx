@@ -49,9 +49,9 @@ const navList = [
 const SideBar = ({ visible, setVisible }) => {
   return (
     <div
-      className={`px-4 py-2 z-20 h-full bg-slate-50 ${
-        visible ? "absolute" : "hidden"
-      } top-0 left-0 lg:block lg:relative`}
+      className={`px-4 py-2 z-20 h-full bg-slate-50 fixed top-0 left-0 lg:block lg:relative transition-transform duration-300 ease-in-out ${
+        visible ? "translate-x-0" : "-translate-x-full"
+      } lg:translate-x-0`}
     >
       <div className="flex justify-between items-center">
         <Logo Logo={logoImg} />
