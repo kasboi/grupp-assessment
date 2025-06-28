@@ -74,7 +74,7 @@ const Table = () => {
   };
 
   const handleRowToggle = (roleId) => {
-    setCheckedRows(prev => {
+    setCheckedRows((prev) => {
       const newCheckedRows = new Set(prev);
       if (newCheckedRows.has(roleId)) {
         newCheckedRows.delete(roleId);
@@ -93,7 +93,7 @@ const Table = () => {
     if (checkedRows.size === rolesData.length) {
       setCheckedRows(new Set());
     } else {
-      setCheckedRows(new Set(rolesData.map(role => role.id)));
+      setCheckedRows(new Set(rolesData.map((role) => role.id)));
     }
   };
 
@@ -126,7 +126,10 @@ const Table = () => {
                         <input
                           id="checkbox-all"
                           type="checkbox"
-                          checked={checkedRows.size === rolesData.length && rolesData.length > 0}
+                          checked={
+                            checkedRows.size === rolesData.length &&
+                            rolesData.length > 0
+                          }
                           onChange={handleSelectAll}
                           className="w-4 h-4 text-blue-600 bg-gray-100 rounded border-gray-300 focus:ring-blue-500 focus:ring-2"
                         />
@@ -172,12 +175,15 @@ const Table = () => {
                 </thead>
                 <tbody className="bg-white divide-y divide-gray-200">
                   {rolesData.map((role) => (
-                    <tr 
-                      key={role.id} 
+                    <tr
+                      key={role.id}
                       className="hover:bg-gray-100 cursor-pointer"
                       onClick={() => handleRowToggle(role.id)}
                     >
-                      <td className="p-4 w-4" onClick={(e) => e.stopPropagation()}>
+                      <td
+                        className="p-4 w-4"
+                        onClick={(e) => e.stopPropagation()}
+                      >
                         <div className="flex items-center">
                           <input
                             id={`checkbox-table-${role.id}`}
@@ -205,7 +211,7 @@ const Table = () => {
                       </td>
                       <td className="w-4">
                         <span
-                          className={`px-1 py-1 flex items-center justify-center text-base rounded-full ${
+                          className={`px-1 py-1 min-w-max flex items-center justify-center text-base rounded-full ${
                             getStatusStyles(role.status).text
                           } ${getStatusStyles(role.status).background}`}
                         >

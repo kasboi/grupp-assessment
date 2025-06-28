@@ -35,7 +35,7 @@ export function ActiveMail({ EnvelopeIcon }) {
               className="accent-purple-600"
               id="color"
             />
-            <div className="font-normal min-w-[30rem]">
+            <div className="font-normal sm:min-w-[20rem] md:min-w-[30rem]">
               <h3 className="text-base">An alternative email</h3>
               <Input
                 Icon={EnvelopeIcon}

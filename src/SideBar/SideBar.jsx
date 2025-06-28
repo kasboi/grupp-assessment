@@ -17,7 +17,6 @@ import {
 import logoImg from "../assets/Logomark.svg";
 import imgWrap from "../assets/ImageWrap.svg";
 import avatar from "../assets/Avatar1.svg";
-import NavBar from "../NavBar/NavBar";
 
 const navList = [
   {

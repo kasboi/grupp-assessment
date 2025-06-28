@@ -52,7 +52,7 @@ export function ActiveRole({
               selectedCard === card.id
                 ? "border-indigo-300 bg-violet-100"
                 : "border-gray-300"
-            } rounded-xl flex gap-8 py-5 px-6 mb-8 items-start cursor-pointer`}
+            } rounded-xl flex gap-4 sm:gap-8 py-5 px-6 mb-8 items-start cursor-pointer`}
             onClick={() => handleCardClick(card.id)}
           >
             <div className="bg-white rounded-lg px-3 py-2">
@@ -73,7 +73,7 @@ export function ActiveRole({
               >
                 Last Active {card.expiry}
               </p>
-              <div>
+              <div className="min-w-max">
                 <button
                   className={`mr-6 ${
                     selectedCard === card.id
