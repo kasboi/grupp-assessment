@@ -27,7 +27,18 @@ vi.mock("../Icon", () => ({
 }));
 
 vi.mock("../Table", () => ({
-  default: () => <div data-testid="table">Table Component</div>,
+  default: () => (
+    <div data-testid="table">
+      <div className="mb-6 md:flex items-center justify-between">
+        <h3 className="text-xl mb-3 font-semibold">User Roles</h3>
+        <button className="bg-white flex items-center border-2 px-5 py-2 rounded-lg shadow-sm hover:bg-gray-50 transition-colors">
+          <div data-testid="download-icon">Download</div>
+          <span className="ml-3">Download all</span>
+        </button>
+      </div>
+      <div>Table Component</div>
+    </div>
+  ),
 }));
 
 vi.mock("@heroicons/react/20/solid", () => ({

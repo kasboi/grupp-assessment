@@ -1,5 +1,7 @@
 import { useState, useEffect } from "react";
 import { DownloadIcon } from "./Icon";
+import jsPDF from "jspdf";
+import autoTable from "jspdf-autotable";
 
 const Table = () => {
   const [rolesData, setRolesData] = useState([]);
@@ -97,6 +99,79 @@ const Table = () => {
     }
   };
 
+  const exportToPDF = () => {
+    const doc = new jsPDF();
+
+    // Add title
+    doc.setFontSize(20);
+    doc.text("User Roles Report", 20, 20);
+
+    // Add export info
+    doc.setFontSize(12);
+    const exportDate = new Date().toLocaleDateString();
+    const exportTime = new Date().toLocaleTimeString();
+    doc.text(`Generated on: ${exportDate} at ${exportTime}`, 20, 35);
+
+    // Determine which data to export
+    const dataToExport =
+      checkedRows.size > 0
+        ? rolesData.filter((role) => checkedRows.has(role.id))
+        : rolesData;
+
+    doc.text(
+      `${checkedRows.size > 0 ? "Selected" : "All"} Roles (${
+        dataToExport.length
+      } items)`,
+      20,
+      45,
+    );
+
+    // Prepare table data
+    const tableColumns = [
+      { header: "Name", dataKey: "name" },
+      { header: "Type", dataKey: "type" },
+      { header: "Date Created", dataKey: "date" },
+      { header: "Status", dataKey: "status" },
+      { header: "User Count", dataKey: "userCount" },
+    ];
+
+    const tableData = dataToExport.map((role) => ({
+      name: role.name,
+      type: role.type,
+      date: role.date,
+      status: role.status,
+      userCount: role.users.length,
+    }));
+
+    // Generate table using autoTable plugin
+    autoTable(doc, {
+      columns: tableColumns,
+      body: tableData,
+      startY: 55,
+      theme: "grid",
+      headStyles: {
+        fillColor: [243, 244, 246], // gray-100
+        textColor: [55, 65, 81], // gray-700
+        fontStyle: "bold",
+      },
+      styles: {
+        fontSize: 10,
+        cellPadding: 5,
+      },
+      alternateRowStyles: {
+        fillColor: [249, 250, 251], // gray-50
+      },
+    });
+
+    // Save the PDF
+    const fileName =
+      checkedRows.size > 0
+        ? `selected-user-roles-${exportDate.replace(/\//g, "-")}.pdf`
+        : `all-user-roles-${exportDate.replace(/\//g, "-")}.pdf`;
+
+    doc.save(fileName);
+  };
+
   if (loading) {
     return (
       <div className="max-w-7xl mx-auto mb-24 flex justify-center items-center h-64">
@@ -114,6 +189,18 @@ const Table = () => {
   }
   return (
     <div className="max-w-7xl mx-auto mb-24">
+      <div className="mb-6 md:flex items-center justify-between">
+        <h3 className="text-xl mb-3 font-semibold">User Roles</h3>
+        <button
+          onClick={exportToPDF}
+          className="bg-white flex items-center border-2 px-5 py-2 rounded-lg shadow-sm hover:bg-gray-50 transition-colors"
+        >
+          <DownloadIcon />
+          <span className="ml-3">
+            {checkedRows.size > 0 ? "Download selected" : "Download all"}
+          </span>
+        </button>
+      </div>
       <div className="flex flex-col">
         <div className="overflow-x-auto shadow-md sm:rounded-lg btn-mode">
           <div className="inline-block min-w-full align-middle">

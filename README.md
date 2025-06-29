@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.2.4-38B2AC)
 ![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18)
 
-A modern, fully responsive settings page built with React and Tailwind CSS, featuring a comprehensive test suite.
+A modern, fully responsive settings page built with React and Tailwind CSS, featuring a comprehensive test suite and PDF export functionality.
 
 🌐 **Live Demo**: [trygrupp-assessment](https://trygrupp-assessment-nu.vercel.app/)
 
@@ -24,6 +24,7 @@ A modern, fully responsive settings page built with React and Tailwind CSS, feat
 - **User Management Table** - Display and manage user roles with real-time data
 - **Settings Navigation** - Comprehensive settings panel with multiple sections
 - **API Integration** - Fetches data from external API endpoints
+- **PDF Export** - Download user roles as a PDF document
 
 ### 🧪 **Testing**
 

@@ -8,6 +8,27 @@ vi.mock("../Icon", () => ({
   DownloadIcon: () => <div data-testid="download-icon">Download</div>,
 }));
 
+// Mock jsPDF and autoTable
+const mockSave = vi.fn();
+const mockText = vi.fn();
+const mockSetFontSize = vi.fn();
+
+vi.mock("jspdf", () => {
+  return {
+    default: vi.fn().mockImplementation(() => ({
+      save: mockSave,
+      text: mockText,
+      setFontSize: mockSetFontSize,
+    })),
+  };
+});
+
+vi.mock("jspdf-autotable", () => {
+  return {
+    default: vi.fn(),
+  };
+});
+
 // Mock API response
 const mockRolesData = [
   {
@@ -103,5 +124,56 @@ describe("Table Component", () => {
     await waitFor(() => {
       expect(screen.getByText("No users")).toBeInTheDocument();
     });
+  });
+
+  it("shows 'Download all' button when no items are selected", async () => {
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockRolesData,
+    });
+
+    render(<Table />);
+
+    await waitFor(() => {
+      expect(screen.getByText("Download all")).toBeInTheDocument();
+    });
+  });
+
+  it("shows 'Download selected' button when items are selected", async () => {
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockRolesData,
+    });
+
+    render(<Table />);
+
+    await waitFor(() => {
+      const checkbox = screen.getByLabelText("checkbox", {
+        selector: 'input[id="checkbox-table-1"]',
+      });
+      fireEvent.click(checkbox);
+    });
+
+    await waitFor(() => {
+      expect(screen.getByText("Download selected")).toBeInTheDocument();
+    });
+  });
+
+  it("calls PDF export when download button is clicked", async () => {
+    const { default: jsPDF } = await import("jspdf");
+
+    fetch.mockResolvedValueOnce({
+      ok: true,
+      json: async () => mockRolesData,
+    });
+
+    render(<Table />);
+
+    await waitFor(() => {
+      const downloadButton = screen.getByText("Download all").closest("button");
+      fireEvent.click(downloadButton);
+    });
+
+    expect(jsPDF).toHaveBeenCalled();
   });
 });

@@ -10,7 +10,6 @@ import visa from "../assets/visa.svg";
 import avatar_icon from "../assets/avatar_icon.svg";
 import radioBox from "../assets/radio-box.svg";
 import radioUnchecked from "../assets/radio-unchecked.svg";
-import { DownloadIcon } from "../components/Icon";
 import Table from "../components/Table";
 
 const details = [
@@ -48,13 +47,6 @@ const Settings = ({ setVisible }) => {
         avatar_icon={avatar_icon}
       />
       <div>
-        <div className="mb-6 md:flex items-center justify-between">
-          <h3 className="text-xl mb-3 font-semibold">User Roles</h3>
-          <button className="bg-white flex items-center border-2 px-5 py-2 rounded-lg shadow-sm">
-            <DownloadIcon />
-            <span className="ml-3">Download all</span>
-          </button>
-        </div>
         <Table />
       </div>
     </div>
