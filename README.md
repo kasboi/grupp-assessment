@@ -1,6 +1,6 @@
 # React: Responsive Settings Page with Tailwind CSS
 
-![Made with Vercel](https://img.shields.io/github/deployments/kasboi/vencru/production?label=vercel&logo=vercel&logoColor=white)
+![Made with Vercel](https://img.shields.io/github/deployments/kasboi/trygrupp/production?label=vercel&logo=vercel&logoColor=white)
 ![Tests](https://img.shields.io/badge/tests-passing-brightgreen)
 ![React](https://img.shields.io/badge/React-18.2.0-blue)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.2.4-38B2AC)
@@ -8,7 +8,7 @@
 
 A modern, fully responsive settings page built with React and Tailwind CSS, featuring a comprehensive test suite and advanced functionality like PDF export.
 
-🌐 **Live Demo**: [vencru-two.vercel.app](https://vencru-two.vercel.app/)
+🌐 **Live Demo**: [trygrupp-two.vercel.app](https://trygrupp-two.vercel.app/)
 
 ## ✨ Features
 
@@ -52,7 +52,7 @@ A modern, fully responsive settings page built with React and Tailwind CSS, feat
 
    ```bash
    git clone <repository-url>
-   cd vencru
+   cd grupp-assessment
    ```
 
 2. **Install dependencies**
