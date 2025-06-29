@@ -161,12 +161,6 @@ The application integrates with the Gamma API for user role management:
 - Prop drilling for component communication
 - Efficient re-rendering optimization
 
-## 🚀 Deployment
-
-The application is deployed on **Vercel** with automatic deployments on push to the main branch.
-
-**Live URL**: [https://vencru-two.vercel.app/](https://vencru-two.vercel.app/)
-
 ## 📝 License
 
 This project is part of a development assessment and is for demonstration purposes.
