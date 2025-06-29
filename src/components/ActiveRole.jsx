@@ -56,7 +56,7 @@ export function ActiveRole({
             onClick={() => handleCardClick(card.id)}
           >
             <div className="bg-white rounded-lg px-3 py-2">
-              <img src={avatar_icon} alt="payment method" />
+              <img src={avatar_icon} alt="user roles" />
             </div>
             <div className="mr-auto ">
               <h4
@@ -104,7 +104,7 @@ export function ActiveRole({
           onClick={addNewUser}
           className="text-gray-500 text-md hover:text-indigo-600 transition-colors cursor-pointer bg-transparent border-none p-0"
         >
-          + Add new payment method
+          + Add role to user
         </button>
       </div>
     </div>

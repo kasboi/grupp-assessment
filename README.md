@@ -6,7 +6,7 @@
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3.2.4-38B2AC)
 ![Vitest](https://img.shields.io/badge/Vitest-3.2.4-6E9F18)
 
-A modern, fully responsive settings page built with React and Tailwind CSS, featuring a comprehensive test suite and advanced functionality like PDF export.
+A modern, fully responsive settings page built with React and Tailwind CSS, featuring a comprehensive test suite.
 
 🌐 **Live Demo**: [trygrupp-assessment](https://trygrupp-assessment-nu.vercel.app/)
 
@@ -107,8 +107,7 @@ npm run test:ui
 ```
 src/
 ├── components/           # Reusable UI components
-│   ├── Table.jsx        # Data table with PDF export
-│   ├── PayMethodCard.jsx # Payment method management
+│   ├── Table.jsx        # Data table
 │   └── __tests__/       # Component test files
 ├── Settings/            # Settings page components
 ├── SideBar/            # Navigation sidebar
