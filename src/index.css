@@ -7,6 +7,6 @@
 }
 
 .btn-mode {
-  -ms-overflow-style: none;  /* IE and Edge */
+  -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none;
 }
